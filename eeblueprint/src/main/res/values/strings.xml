@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Blueprint</string>
+    <string name="dialog_action_okay">Okay</string>
+    <string name="dialog_action_yes">Yes</string>
+    <string name="dialog_action_no">No</string>
+    <string name="dialog_action_cancel">Cancel</string>
+    <string name="dialog_title_error">Error</string>
+    <string name="dialog_title_confirmation">Confirmation</string>
+    <string name="dialog_title_info">Information</string>
+    <string name="dialog_label_loading">Loading…</string>
+</resources>

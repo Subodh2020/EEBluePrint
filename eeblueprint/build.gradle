@@ -1,0 +1,124 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+
+ext {
+
+    bintrayRepo = "EEBlueprint"
+    bintrayName = "com.extraaedge.eeblueprint"
+
+    libraryName = 'eeblueprint'
+
+    publishedGroupId = 'com.extraaedge.eeblueprint'
+    artifact = 'eeblueprint'
+    libraryVersion = '0.3.0'
+
+    libraryDescription = 'Blueprint for EE projects'
+    siteUrl = 'http://extraaedge.com'
+    gitUrl = 'https://bitbucket.org/extraaedgemobileteam/eeblueprint'
+    developerId = 'extraaedge'
+    developerName = 'extraaedge'
+    developerEmail = 'rohanp@theextraaedge.com'
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'https://www.apache.org/licenses/LICENSE-2.0'
+    allLicenses = ["Apache-2.0"]
+}
+
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "29.0.3"
+
+
+    defaultConfig {
+        minSdkVersion 20
+        targetSdkVersion 30
+        versionCode 30
+        versionName "0.3.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
+    //AppCompat
+    api "androidx.appcompat:appcompat:$appCompat"
+
+    //ConstraintLayout
+    api "androidx.constraintlayout:constraintlayout:$constraintLayout"
+
+    //UI
+    api "androidx.recyclerview:recyclerview:$recyclerView"
+
+    //Anko
+    api "org.jetbrains.anko:anko:$anko"
+
+    //Retrofit
+    api "com.squareup.retrofit2:retrofit:$retrofit"
+    api "com.squareup.retrofit2:converter-gson:$gsonConverter"
+    api "com.squareup.okhttp3:logging-interceptor:$interceptor"
+
+    //Gson
+    api "com.google.code.gson:gson:$gson"
+
+    //Coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+
+    //Koin
+    api "org.koin:koin-android:$koin"
+    api "org.koin:koin-androidx-viewmodel:$koin"
+
+    //Android JetPack - Arch Components
+    api "androidx.room:room-runtime:$room"
+    kapt "androidx.room:room-compiler:$room"
+    api "androidx.room:room-ktx:$room"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
+    api "androidx.lifecycle:lifecycle-extensions:$lifecycleExtension"
+
+    //Material Design
+    api "com.google.android.material:material:$material"
+
+    //snackbar library
+    api "com.github.matecode:Snacky:$snackyBar"
+
+    //Material Dialogs
+    api "com.afollestad.material-dialogs:core:$materialDialogs"
+    api "com.afollestad.material-dialogs:input:$materialDialogs"
+
+    api 'org.jetbrains.kotlin:kotlin-reflect'
+
+    //Testing
+    testImplementation "junit:junit:4.13.2"
+    androidTestImplementation "androidx.test:runner:$testRunner"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
+
+    //Lottie
+    implementation "com.airbnb.android:lottie:3.4.0"
+    //okLog
+    implementation "com.github.simonpercic:oklog3:2.3.0"
+    //HyperLog
+    implementation 'com.hypertrack:hyperlog:0.0.10'
+}
+
+//if (project.rootProject.file('local.properties').exists()){
+//    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+//    apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+//}

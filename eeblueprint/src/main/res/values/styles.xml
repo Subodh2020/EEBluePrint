@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BlueprintTheme" parent="BlueprintTheme.Base">
+        <item name="android:dialogTheme">@style/BlueprintAlertDialogTheme</item>
+    </style>
+
+    <!-- Alert Dialog Theme to be applied in case of custom dialogs-->
+    <style name="BlueprintAlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Base Blueprint Theme for lollipop & above-->
+    <style name="BlueprintTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Blueprint Theme to make any activity full screen -->
+    <style name="BlueprintTheme.FullScreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textStyle">normal</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Blueprint Theme to make any activity with transparent background -->
+    <style name="BlueprintTheme.Transparent" parent="BlueprintTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@color/colorTransparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+</resources>
