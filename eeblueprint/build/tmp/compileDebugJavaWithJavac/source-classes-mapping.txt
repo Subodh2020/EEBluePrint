@@ -1,0 +1,6 @@
+com/extraaedge/eeblueprint/BuildConfig.java
+ com.extraaedge.eeblueprint.BuildConfig
+com/extraaedge/eeblueprint/databinding/LayoutDefaultToolbarBinding.java
+ com.extraaedge.eeblueprint.databinding.LayoutDefaultToolbarBinding
+com/extraaedge/eeblueprint/databinding/DialogLoadingBinding.java
+ com.extraaedge.eeblueprint.databinding.DialogLoadingBinding

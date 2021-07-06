@@ -1,0 +1,4 @@
+com/extraaedge/eeblueprintsample/databinding/ActivitySampleBinding.java
+ com.extraaedge.eeblueprintsample.databinding.ActivitySampleBinding
+com/extraaedge/eeblueprintsample/BuildConfig.java
+ com.extraaedge.eeblueprintsample.BuildConfig
