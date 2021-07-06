@@ -52,7 +52,7 @@ ext {
     retrofit = '2.6.2'
     gsonConverter = '2.6.1'
     interceptor = '3.9.0'
-    gson = '2.8.6'
+    gson = '2.8.5'
     coroutines = '1.5.0'
     koin = '2.0.1'
     room = '2.3.0'
