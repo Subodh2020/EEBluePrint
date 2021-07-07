@@ -1,11 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.simonpercic:oklog3:2.3.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f0707cd848aef3e55996d247c98b424f/jetified-oklog3-2.3.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a19d62cbec9fc94fbdcf3c0de3dfbc42/jetified-oklog3-2.3.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3954f87b0962060f812df85ac30fb5fb/jetified-oklog3-2.3.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3954f87b0962060f812df85ac30fb5fb/jetified-oklog3-2.3.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3954f87b0962060f812df85ac30fb5fb/jetified-oklog3-2.3.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3954f87b0962060f812df85ac30fb5fb/jetified-oklog3-2.3.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.simonpercic/oklog3/2.3.0/54688cdff0def967f971029ee8b04d11ac1cdcae/oklog3-2.3.0-javadoc.jar!/" />
