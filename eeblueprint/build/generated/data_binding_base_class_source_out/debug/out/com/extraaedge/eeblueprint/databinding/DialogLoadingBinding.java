@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.airbnb.lottie.LottieAnimationView;
 import com.extraaedge.eeblueprint.R;
 import java.lang.NullPointerException;
@@ -67,13 +68,13 @@ public final class DialogLoadingBinding implements ViewBinding {
       ConstraintLayout ctlView = (ConstraintLayout) rootView;
 
       id = R.id.lottieLoadingView;
-      LottieAnimationView lottieLoadingView = rootView.findViewById(id);
+      LottieAnimationView lottieLoadingView = ViewBindings.findChildViewById(rootView, id);
       if (lottieLoadingView == null) {
         break missingId;
       }
 
       id = R.id.txtLoading;
-      TextView txtLoading = rootView.findViewById(id);
+      TextView txtLoading = ViewBindings.findChildViewById(rootView, id);
       if (txtLoading == null) {
         break missingId;
       }

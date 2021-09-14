@@ -18,28 +18,26 @@ ext {
     artifact = 'eeblueprint'
     libraryVersion = '0.5.0'
 
-    libraryDescription = 'Blueprint for EE projects'
-    siteUrl = 'http://extraaedge.com'
-    gitUrl = 'https://bitbucket.org/extraaedgemobileteam/eeblueprint'
-    developerId = 'extraaedge'
-    developerName = 'extraaedge'
-    developerEmail = 'rohanp@theextraaedge.com'
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'https://www.apache.org/licenses/LICENSE-2.0'
-    allLicenses = ["Apache-2.0"]
+//    libraryDescription = 'Blueprint for EE projects'
+//    siteUrl = 'http://extraaedge.com'
+//    gitUrl = 'https://bitbucket.org/extraaedgemobileteam/eeblueprint'
+//    developerId = 'extraaedge'
+//    developerName = 'extraaedge'
+//    developerEmail = 'rohanp@theextraaedge.com'
+//    licenseName = 'The Apache Software License, Version 2.0'
+//    licenseUrl = 'https://www.apache.org/licenses/LICENSE-2.0'
+//    allLicenses = ["Apache-2.0"]
 }
 
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
 
     defaultConfig {
         minSdkVersion 20
-        targetSdkVersion 30
-        versionCode 50
-        versionName "0.5.0"
+        targetSdkVersion 31
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 

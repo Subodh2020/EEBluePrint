@@ -4,7 +4,7 @@
             "outputFile": "D:\\Workspace-Android\\AndroidProgramme\\EEBlueprint-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\5c1589ae9c352194deb299abbfe1bbec\\media-1.0.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-3\\3db8bdf0c162212110220b470073b669\\transformed\\media-1.0.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-2\\files-2.1\\02c300dc10a55cec167e420647edafee\\appcompat-1.3.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\lenovo\\.gradle\\caches\\transforms-3\\29ee0ea9ccd9534d5bf690994233b027\\transformed\\appcompat-1.3.1\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
