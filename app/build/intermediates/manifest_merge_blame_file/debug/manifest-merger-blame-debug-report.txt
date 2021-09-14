@@ -6,72 +6,72 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml
+8-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="31" />
-9-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml
+9-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-11-->[:eeblueprint] D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\eeblueprint\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-79
-11-->[:eeblueprint] D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\eeblueprint\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-76
+11-->[:eeblueprint] D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\eeblueprint\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-79
+11-->[:eeblueprint] D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\eeblueprint\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:22-76
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->[:eeblueprint] D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\eeblueprint\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-67
-12-->[:eeblueprint] D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\eeblueprint\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-64
+12-->[:eeblueprint] D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\eeblueprint\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-67
+12-->[:eeblueprint] D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\eeblueprint\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:22-64
 13
 14    <application
-14-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml:4:5-21:19
+14-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml:4:5-21:19
 15        android:allowBackup="true"
-15-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml:4:18-44
+15-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml:4:18-44
 16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-16-->[androidx.core:core:1.6.0] C:\Users\lenovo\.gradle\caches\transforms-3\30dc65699e91a23d91678d1bf07bd62f\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
+16-->[androidx.core:core:1.6.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\216f07d863446b7e14beaf82e83d39b9\core-1.6.0\AndroidManifest.xml:24:18-86
 17        android:debuggable="true"
 18        android:icon="@mipmap/ic_launcher"
-18-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml:6:18-52
+18-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml:6:18-52
 19        android:label="@string/app_name"
-19-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml:5:18-50
+19-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml:5:18-50
 20        android:roundIcon="@mipmap/ic_launcher_round"
-20-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml:7:18-63
+20-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml:7:18-63
 21        android:supportsRtl="true"
-21-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml:8:18-44
+21-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml:8:18-44
 22        android:testOnly="true"
 23        android:theme="@style/BlueprintTheme" >
-23-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml:9:18-55
+23-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml:9:18-55
 24        <activity
-24-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml:12:9-18:20
+24-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml:12:9-18:20
 25            android:name="com.extraaedge.eeblueprintsample.SampleActivity"
-25-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml:12:19-49
+25-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml:12:19-49
 26            android:exported="true" >
-26-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml:13:13-36
+26-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml:13:13-36
 27            <intent-filter>
-27-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml:14:13-17:29
+27-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml:14:13-17:29
 28                <category android:name="android.intent.category.LAUNCHER" />
-28-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml:15:17-76
-28-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml:15:27-74
+28-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml:15:17-76
+28-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml:15:27-74
 29
 30                <action android:name="android.intent.action.MAIN" />
-30-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml:16:17-68
-30-->D:\Workspace-Android\AndroidProgramme\EEBlueprint-master\app\src\main\AndroidManifest.xml:16:25-66
+30-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml:16:17-68
+30-->D:\Workspace-Android\AndroidProgramme\EEBluePrint-Master\app\src\main\AndroidManifest.xml:16:25-66
 31            </intent-filter>
 32        </activity>
 33
 34        <service
-34-->[androidx.room:room-runtime:2.3.0] C:\Users\lenovo\.gradle\caches\transforms-3\886fe5a24a3ddb7a317232b2415d3492\transformed\room-runtime-2.3.0\AndroidManifest.xml:25:9-28:40
+34-->[androidx.room:room-runtime:2.3.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\fa5f4e961ac0dee2cc498016f8109929\room-runtime-2.3.0\AndroidManifest.xml:25:9-28:40
 35            android:name="androidx.room.MultiInstanceInvalidationService"
-35-->[androidx.room:room-runtime:2.3.0] C:\Users\lenovo\.gradle\caches\transforms-3\886fe5a24a3ddb7a317232b2415d3492\transformed\room-runtime-2.3.0\AndroidManifest.xml:26:13-74
+35-->[androidx.room:room-runtime:2.3.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\fa5f4e961ac0dee2cc498016f8109929\room-runtime-2.3.0\AndroidManifest.xml:26:13-74
 36            android:directBootAware="true"
-36-->[androidx.room:room-runtime:2.3.0] C:\Users\lenovo\.gradle\caches\transforms-3\886fe5a24a3ddb7a317232b2415d3492\transformed\room-runtime-2.3.0\AndroidManifest.xml:27:13-43
+36-->[androidx.room:room-runtime:2.3.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\fa5f4e961ac0dee2cc498016f8109929\room-runtime-2.3.0\AndroidManifest.xml:27:13-43
 37            android:exported="false" />
-37-->[androidx.room:room-runtime:2.3.0] C:\Users\lenovo\.gradle\caches\transforms-3\886fe5a24a3ddb7a317232b2415d3492\transformed\room-runtime-2.3.0\AndroidManifest.xml:28:13-37
+37-->[androidx.room:room-runtime:2.3.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\fa5f4e961ac0dee2cc498016f8109929\room-runtime-2.3.0\AndroidManifest.xml:28:13-37
 38
 39        <provider
-39-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\84dd05ebfb7f1acf5051150f99f76df9\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+39-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\6408b73ea227faeaf09761938ece1e5b\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
 40            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-40-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\84dd05ebfb7f1acf5051150f99f76df9\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+40-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\6408b73ea227faeaf09761938ece1e5b\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
 41            android:authorities="com.extraaedge.eeblueprintsample.lifecycle-process"
-41-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\84dd05ebfb7f1acf5051150f99f76df9\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+41-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\6408b73ea227faeaf09761938ece1e5b\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
 42            android:exported="false"
-42-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\84dd05ebfb7f1acf5051150f99f76df9\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+42-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\6408b73ea227faeaf09761938ece1e5b\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
 43            android:multiprocess="true" />
-43-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\lenovo\.gradle\caches\transforms-3\84dd05ebfb7f1acf5051150f99f76df9\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+43-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\lenovo\.gradle\caches\transforms-2\files-2.1\6408b73ea227faeaf09761938ece1e5b\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
 44    </application>
 45
 46</manifest>

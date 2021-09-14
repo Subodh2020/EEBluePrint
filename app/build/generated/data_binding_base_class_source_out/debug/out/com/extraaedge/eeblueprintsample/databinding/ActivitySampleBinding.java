@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
-import androidx.viewbinding.ViewBindings;
 import com.extraaedge.eeblueprint.databinding.LayoutDefaultToolbarBinding;
 import com.extraaedge.eeblueprintsample.R;
 import java.lang.NullPointerException;
@@ -61,13 +60,13 @@ public final class ActivitySampleBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnClick;
-      Button btnClick = ViewBindings.findChildViewById(rootView, id);
+      Button btnClick = rootView.findViewById(id);
       if (btnClick == null) {
         break missingId;
       }
 
       id = R.id.include;
-      View include = ViewBindings.findChildViewById(rootView, id);
+      View include = rootView.findViewById(id);
       if (include == null) {
         break missingId;
       }

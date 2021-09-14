@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.hypertrack:hyperlog:0.0.10@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5ff278e69b79ec4381121b40cc4ca1a5/jetified-hyperlog-0.0.10/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5ff278e69b79ec4381121b40cc4ca1a5/jetified-hyperlog-0.0.10/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5ff278e69b79ec4381121b40cc4ca1a5/jetified-hyperlog-0.0.10/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hypertrack/hyperlog/0.0.10/684e35af7de8aa6f4db815d8b68760d653184d64/hyperlog-0.0.10-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hypertrack/hyperlog/0.0.10/66c3e7aaa0c0c46951e997987d759d8d8eedb45/hyperlog-0.0.10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

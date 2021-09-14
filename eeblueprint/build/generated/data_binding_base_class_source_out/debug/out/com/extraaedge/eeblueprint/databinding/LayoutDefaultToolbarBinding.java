@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewbinding.ViewBinding;
-import androidx.viewbinding.ViewBindings;
 import com.extraaedge.eeblueprint.R;
 import com.google.android.material.appbar.AppBarLayout;
 import java.lang.NullPointerException;
@@ -62,7 +61,7 @@ public final class LayoutDefaultToolbarBinding implements ViewBinding {
       AppBarLayout ablToolbar = (AppBarLayout) rootView;
 
       id = R.id.default_toolbar;
-      Toolbar defaultToolbar = ViewBindings.findChildViewById(rootView, id);
+      Toolbar defaultToolbar = rootView.findViewById(id);
       if (defaultToolbar == null) {
         break missingId;
       }
