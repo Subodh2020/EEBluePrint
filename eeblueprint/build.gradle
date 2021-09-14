@@ -34,13 +34,13 @@ android {
     compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
-
     defaultConfig {
         minSdkVersion 20
         targetSdkVersion 31
-
+        versionCode 80
+        versionName "0.8.0"
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {
