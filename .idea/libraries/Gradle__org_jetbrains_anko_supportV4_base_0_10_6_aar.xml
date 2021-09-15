@@ -1,10 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: org.jetbrains.anko:supportV4-base:0.10.6@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/eddc67d11a8946bf9a301b48a75ea53e/transformed/jetified-supportV4-base-0.10.6/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e5a08c1b43f46fa1faa5b5fcf25c2404/jetified-supportV4-base-0.10.6/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e5a08c1b43f46fa1faa5b5fcf25c2404/jetified-supportV4-base-0.10.6/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e5a08c1b43f46fa1faa5b5fcf25c2404/jetified-supportV4-base-0.10.6/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fcb31856fb74ce7691384f798c9e9cc1/jetified-supportV4-base-0.10.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fcb31856fb74ce7691384f798c9e9cc1/jetified-supportV4-base-0.10.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fcb31856fb74ce7691384f798c9e9cc1/jetified-supportV4-base-0.10.6/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

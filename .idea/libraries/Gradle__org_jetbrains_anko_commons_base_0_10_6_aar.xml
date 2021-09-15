@@ -1,10 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: org.jetbrains.anko:commons-base:0.10.6@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/724963a17ccaeba2eb34be3a7a03dd4d/transformed/jetified-commons-base-0.10.6/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f2ad12fae7ff654bd0e44c0d623dde99/jetified-commons-base-0.10.6/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f2ad12fae7ff654bd0e44c0d623dde99/jetified-commons-base-0.10.6/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f2ad12fae7ff654bd0e44c0d623dde99/jetified-commons-base-0.10.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f2ad12fae7ff654bd0e44c0d623dde99/jetified-commons-base-0.10.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f2ad12fae7ff654bd0e44c0d623dde99/jetified-commons-base-0.10.6/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/464b67117b4279ec7ccf58d905e11b06/jetified-commons-base-0.10.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/464b67117b4279ec7ccf58d905e11b06/jetified-commons-base-0.10.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/464b67117b4279ec7ccf58d905e11b06/jetified-commons-base-0.10.6/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

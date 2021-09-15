@@ -1,10 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: org.jetbrains.anko:appcompatV7-base:0.10.6@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7380369c90df748661425cee6def02f5/transformed/jetified-appcompatV7-base-0.10.6/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/31876bedb3c117e4397939f5f27cf471/jetified-appcompatV7-base-0.10.6/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/31876bedb3c117e4397939f5f27cf471/jetified-appcompatV7-base-0.10.6/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/31876bedb3c117e4397939f5f27cf471/jetified-appcompatV7-base-0.10.6/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/189f6a3ad70b5edec654e21eae384a54/jetified-appcompatV7-base-0.10.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/189f6a3ad70b5edec654e21eae384a54/jetified-appcompatV7-base-0.10.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/189f6a3ad70b5edec654e21eae384a54/jetified-appcompatV7-base-0.10.6/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
