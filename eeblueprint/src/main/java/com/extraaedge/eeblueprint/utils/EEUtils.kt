@@ -233,13 +233,12 @@ fun currentTimeInISO(): String {
 
 
 fun createTimeoutErrorResponse(context: Context,request: Request): Response {
-    // You can customize the error response as needed
     val responseBody = ResponseBody.create(MediaType.parse("text/plain"), "error here",)
     val response =  Response.Builder()
         .request(request)
         .protocol(Protocol.HTTP_1_1)
         .body(responseBody)
-        .code(108) // Use an appropriate HTTP status code for timeout (e.g., 408 Request Timeout)
+        .code(108)
         .message(context.getString(R.string.request_time_out))
         .build()
 
@@ -248,14 +247,13 @@ fun createTimeoutErrorResponse(context: Context,request: Request): Response {
 
 // Function to create a custom error response for generic errors
 fun createGenericErrorResponse(context: Context,request: Request): Response {
-    // You can customize the error response as needed
     val responseBody = ResponseBody.create(MediaType.parse("text/plain"), "")
 
     val response = Response.Builder()
         .request(request)
         .protocol(Protocol.HTTP_1_1)
         .body(responseBody)
-        .code(109) // Use an appropriate HTTP status code for generic errors (e.g., 500 Internal Server Error)
+        .code(109)
         .message(context.getString(R.string.an_error_occurred))
         .build()
 
