@@ -4,10 +4,12 @@ import android.app.Activity
 import android.content.Context
 import android.graphics.Typeface
 import android.text.TextUtils
+import com.extraaedge.eeblueprint.R
 import com.extraaedge.eeblueprint.remote.EEError
 import com.extraaedge.eeblueprint.utils.DateTimeFormat.TIME_ZONE_UTC
 import com.google.android.material.snackbar.Snackbar
 import de.mateware.snacky.Snacky
+import okhttp3.*
 import retrofit2.HttpException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
@@ -230,3 +232,32 @@ fun currentTimeInISO(): String {
 }
 
 
+fun createTimeoutErrorResponse(context: Context,request: Request): Response {
+    // You can customize the error response as needed
+    val responseBody = ResponseBody.create(MediaType.parse("text/plain"), "error here",)
+    val response =  Response.Builder()
+        .request(request)
+        .protocol(Protocol.HTTP_1_1)
+        .body(responseBody)
+        .code(408) // Use an appropriate HTTP status code for timeout (e.g., 408 Request Timeout)
+        .message(context.getString(R.string.request_time_out))
+        .build()
+
+    return response
+}
+
+// Function to create a custom error response for generic errors
+fun createGenericErrorResponse(context: Context,request: Request): Response {
+    // You can customize the error response as needed
+    val responseBody = ResponseBody.create(MediaType.parse("text/plain"), "")
+
+    val response = Response.Builder()
+        .request(request)
+        .protocol(Protocol.HTTP_1_1)
+        .body(responseBody)
+        .code(500) // Use an appropriate HTTP status code for generic errors (e.g., 500 Internal Server Error)
+        .message(context.getString(R.string.an_error_occurred))
+        .build()
+
+    return response
+}
