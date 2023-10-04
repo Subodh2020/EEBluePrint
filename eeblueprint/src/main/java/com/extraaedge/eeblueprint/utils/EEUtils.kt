@@ -239,7 +239,7 @@ fun createTimeoutErrorResponse(context: Context,request: Request): Response {
         .request(request)
         .protocol(Protocol.HTTP_1_1)
         .body(responseBody)
-        .code(408) // Use an appropriate HTTP status code for timeout (e.g., 408 Request Timeout)
+        .code(108) // Use an appropriate HTTP status code for timeout (e.g., 408 Request Timeout)
         .message(context.getString(R.string.request_time_out))
         .build()
 
@@ -255,7 +255,7 @@ fun createGenericErrorResponse(context: Context,request: Request): Response {
         .request(request)
         .protocol(Protocol.HTTP_1_1)
         .body(responseBody)
-        .code(500) // Use an appropriate HTTP status code for generic errors (e.g., 500 Internal Server Error)
+        .code(109) // Use an appropriate HTTP status code for generic errors (e.g., 500 Internal Server Error)
         .message(context.getString(R.string.an_error_occurred))
         .build()
 
