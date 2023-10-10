@@ -239,7 +239,7 @@ fun createTimeoutErrorResponse(context: Context,request: Request): Response {
         .protocol(Protocol.HTTP_1_1)
         .body(responseBody)
         .code(108)
-        .message(context.getString(R.string.request_time_out))
+        .message(context.getString(R.string.request_time_out)+" url - ${request.url()}")
         .build()
 
     return response
@@ -254,7 +254,7 @@ fun createGenericErrorResponse(context: Context,request: Request): Response {
         .protocol(Protocol.HTTP_1_1)
         .body(responseBody)
         .code(109)
-        .message(context.getString(R.string.an_error_occurred))
+        .message(context.getString(R.string.an_error_occurred)+" url - ${request.url()}")
         .build()
 
     return response
