@@ -31,15 +31,15 @@ ext {
 
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
     buildToolsVersion "30.0.3"
 
 
     defaultConfig {
         minSdkVersion 20
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode 50
-        versionName "0.5.0"
+        versionName "1.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 

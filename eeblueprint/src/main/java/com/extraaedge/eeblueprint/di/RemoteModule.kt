@@ -16,6 +16,7 @@ import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.net.SocketTimeoutException
 import java.security.SecureRandom
 import java.security.cert.CertificateException
 import java.security.cert.X509Certificate
@@ -51,16 +52,21 @@ fun createRemoteModule(baseUrl: String, context: Context, isDebug: Boolean, isBe
                 .method(originalRequest.method(), originalRequest.body())
             val token = getAuthToken(context)
             if (token != null && !TextUtils.isEmpty(token)) {
-
                 var tokenString = "Bearer $token"
-
-                if(!isBearer){
+                if (!isBearer) {
                     tokenString = "$token"
                 }
                 requestBuilder.addHeader("Authorization", tokenString)
             }
             val request = requestBuilder.build()
-            chain.proceed(request)
+
+            return@Interceptor try {
+                chain.proceed(request)
+            } catch (e: SocketTimeoutException) {
+                createTimeoutErrorResponse(context,request)
+            } catch (e: Exception) {
+                createGenericErrorResponse(context,request)
+            }
         }
     }
 

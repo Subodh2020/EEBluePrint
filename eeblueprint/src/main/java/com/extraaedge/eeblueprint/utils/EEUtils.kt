@@ -4,10 +4,12 @@ import android.app.Activity
 import android.content.Context
 import android.graphics.Typeface
 import android.text.TextUtils
+import com.extraaedge.eeblueprint.R
 import com.extraaedge.eeblueprint.remote.EEError
 import com.extraaedge.eeblueprint.utils.DateTimeFormat.TIME_ZONE_UTC
 import com.google.android.material.snackbar.Snackbar
 import de.mateware.snacky.Snacky
+import okhttp3.*
 import retrofit2.HttpException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
@@ -230,3 +232,30 @@ fun currentTimeInISO(): String {
 }
 
 
+fun createTimeoutErrorResponse(context: Context,request: Request): Response {
+    val responseBody = ResponseBody.create(MediaType.parse("text/plain"), "error here",)
+    val response =  Response.Builder()
+        .request(request)
+        .protocol(Protocol.HTTP_1_1)
+        .body(responseBody)
+        .code(108)
+        .message(context.getString(R.string.request_time_out)+" url - ${request.url()}")
+        .build()
+
+    return response
+}
+
+// Function to create a custom error response for generic errors
+fun createGenericErrorResponse(context: Context,request: Request): Response {
+    val responseBody = ResponseBody.create(MediaType.parse("text/plain"), "")
+
+    val response = Response.Builder()
+        .request(request)
+        .protocol(Protocol.HTTP_1_1)
+        .body(responseBody)
+        .code(109)
+        .message(context.getString(R.string.an_error_occurred)+" url - ${request.url()}")
+        .build()
+
+    return response
+}

@@ -8,4 +8,6 @@
     <string name="dialog_title_confirmation">Confirmation</string>
     <string name="dialog_title_info">Information</string>
     <string name="dialog_label_loading">Loading…</string>
+    <string name="request_time_out">Request timed out. Please try again later.</string>
+    <string name="an_error_occurred">An error occurred. Please try again later.</string>
 </resources>
