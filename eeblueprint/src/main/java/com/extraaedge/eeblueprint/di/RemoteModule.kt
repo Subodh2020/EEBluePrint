@@ -26,7 +26,7 @@ import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
 
-fun createRemoteModule(baseUrl: String, context: Context, isDebug: Boolean, isBearer :Boolean = true) = module {
+fun createRemoteModule(baseUrl: String, context: Context, isDebug: Boolean, isBearer :Boolean = true,interceptor: Interceptor?) = module {
 
     factory<Interceptor>(named(LOGGING_IMPORT)) {
         val loggingInterceptor = HttpLoggingInterceptor()
@@ -74,6 +74,10 @@ fun createRemoteModule(baseUrl: String, context: Context, isDebug: Boolean, isBe
             .pingInterval(30, TimeUnit.SECONDS)
             //.addInterceptor(get(named(OKLOG_IMPORT)))
             .addNetworkInterceptor(get(named(HEADERS_IMPORT)))
+
+        interceptor?.let {
+            okHttpClient.addInterceptor(it)
+        }
 
         if(!isBearer){
             val trustAllCerts: Array<TrustManager> = arrayOf(
