@@ -63,9 +63,9 @@ fun createRemoteModule(baseUrl: String, context: Context, isDebug: Boolean, isBe
             return@Interceptor try {
                 chain.proceed(request)
             } catch (e: SocketTimeoutException) {
-                createTimeoutErrorResponse(context,request)
+                createTimeoutErrorResponse(context,request,e)
             } catch (e: Exception) {
-                createGenericErrorResponse(context,request)
+                createGenericErrorResponse(context,request,e)
             }
         }
     }

@@ -232,21 +232,21 @@ fun currentTimeInISO(): String {
 }
 
 
-fun createTimeoutErrorResponse(context: Context,request: Request): Response {
+fun createTimeoutErrorResponse(context: Context,request: Request,e:java.lang.Exception): Response {
     val responseBody = ResponseBody.create(MediaType.parse("text/plain"), "error here",)
     val response =  Response.Builder()
         .request(request)
         .protocol(Protocol.HTTP_1_1)
         .body(responseBody)
         .code(108)
-        .message(context.getString(R.string.request_time_out)+" url - ${request.url()}")
+        .message(context.getString(R.string.request_time_out)+" url - ${request.url()}, exception - $e")
         .build()
 
     return response
 }
 
 // Function to create a custom error response for generic errors
-fun createGenericErrorResponse(context: Context,request: Request): Response {
+fun createGenericErrorResponse(context: Context,request: Request,e:java.lang.Exception): Response {
     val responseBody = ResponseBody.create(MediaType.parse("text/plain"), "")
 
     val response = Response.Builder()
@@ -254,7 +254,7 @@ fun createGenericErrorResponse(context: Context,request: Request): Response {
         .protocol(Protocol.HTTP_1_1)
         .body(responseBody)
         .code(109)
-        .message(context.getString(R.string.an_error_occurred)+" url - ${request.url()}")
+        .message(context.getString(R.string.an_error_occurred)+" url - ${request.url()}, exception - $e")
         .build()
 
     return response
