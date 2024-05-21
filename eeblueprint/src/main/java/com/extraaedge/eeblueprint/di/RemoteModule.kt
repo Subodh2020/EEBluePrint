@@ -7,6 +7,7 @@ import com.extraaedge.eeblueprint.utils.*
 import com.extraaedge.eeblueprint.ui.CustomLogger
 import com.extraaedge.eeblueprint.utils.OKLOG_IMPORT
 import com.github.simonpercic.oklog3.OkLogInterceptor
+import com.google.gson.Gson
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
@@ -58,6 +59,10 @@ fun createRemoteModule(baseUrl: String, context: Context, isDebug: Boolean, isBe
                 }
                 requestBuilder.addHeader("Authorization", tokenString)
             }
+            requestBuilder.addHeader(SECURITY_API_KEY_1_NAME, getAPIKey1Value())
+            requestBuilder.addHeader(SECURITY_API_KEY_2_NAME, generateSignature(baseUrl,originalRequest.method(),
+                Gson().toJson(originalRequest.body())))
+
             val request = requestBuilder.build()
 
             return@Interceptor try {
