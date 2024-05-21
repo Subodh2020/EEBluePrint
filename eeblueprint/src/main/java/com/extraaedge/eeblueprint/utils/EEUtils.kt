@@ -8,13 +8,20 @@ import com.extraaedge.eeblueprint.R
 import com.extraaedge.eeblueprint.remote.EEError
 import com.extraaedge.eeblueprint.utils.DateTimeFormat.TIME_ZONE_UTC
 import com.google.android.material.snackbar.Snackbar
+import com.hypertrack.hyperlog.HyperLog
 import de.mateware.snacky.Snacky
 import okhttp3.*
 import retrofit2.HttpException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
+import java.nio.charset.StandardCharsets
+import java.security.SecureRandom
 import java.util.*
+import javax.crypto.Cipher
+import javax.crypto.Mac
+import javax.crypto.spec.IvParameterSpec
+import javax.crypto.spec.SecretKeySpec
 
 const val KEY_TOKEN = "ee_token"
 const val KEY_REFRESH_TOKEN = "ee_refresh_token"
@@ -29,6 +36,13 @@ const val OKLOG_IMPORT = "oklog_import"
 const val CONNECT_TIMEOUT_SECONDS : Long = 25
 const val READ_TIMEOUT_SECONDS : Long = 45
 const val WRITE_TIMEOUT_SECONDS : Long = 40
+
+//Network Constants
+const val SECURITY_KEY_HEADER = "]{H?8hy}z5Q#ZL+(9mR+fsewed835*2dhHdfrhd!~sdgwe3453dghSEBSR";
+const val SECURITY_API_KEY_1 = "L2dNwK@7tYz!8F6b";
+const val SECURITY_API_KEY_1_NAME = "X-Ee-Correlation-id";
+const val SECURITY_API_KEY_2_NAME = "x-er-id";
+const val TAG = "EEUtils_BluePrint:"
 
 object DateTimeFormat {
     const val ISO = "yyyy-MM-dd'T'HH:mm:ss"
@@ -258,4 +272,64 @@ fun createGenericErrorResponse(context: Context,request: Request,e:java.lang.Exc
         .build()
 
     return response
+}
+
+fun generateSignature(pathname: String, queryString: String, body: String): String {
+    var finalQueryString = ""
+    if (queryString.isNotEmpty()) {
+        val cleanedQueryString = queryString.replace("{", "").replace("}", "")
+        val replacedQueryString = cleanedQueryString.replace("\"", "").replace(":", "=")
+        finalQueryString = replacedQueryString.replace(",", "&")
+    }
+
+    val dataToSign = "/$pathname$finalQueryString$body"
+    HyperLog.i(TAG,"Data to sign: $dataToSign")
+
+    val hmacSha256 = Mac.getInstance("HmacSHA256")
+    val secretKeySpec = SecretKeySpec(SECURITY_KEY_HEADER.toByteArray(StandardCharsets.UTF_8), "HmacSHA256")
+    hmacSha256.init(secretKeySpec)
+    val hash = hmacSha256.doFinal(dataToSign.toByteArray(StandardCharsets.UTF_8))
+    HyperLog.i(TAG,"generateSignature:${android.util.Base64.encodeToString(hash, android.util.Base64.NO_WRAP)}")
+    return android.util.Base64.encodeToString(hash, android.util.Base64.NO_WRAP)
+}
+
+fun encryptStringWithKey(stringToEncrypt: String, secretKey: String): String {
+    if (secretKey.length != 16 && secretKey.length != 32) {
+        throw IllegalArgumentException("Length issue")
+    }
+
+    val secretKeyBuffer = secretKey.toByteArray(Charsets.UTF_8)
+    val iv = generateRandomBytes(16)
+    val stringToEncryptBuffer = stringToEncrypt.toByteArray(Charsets.UTF_8)
+    val encryptedBuffer = encryptAesCbc(stringToEncryptBuffer, secretKeyBuffer, iv)
+
+    return android.util.Base64.encodeToString(encryptedBuffer, android.util.Base64.NO_WRAP)
+}
+
+fun encryptAesCbc(dataToEncrypt: ByteArray, secretKey: ByteArray, iv: ByteArray): ByteArray {
+    val keySpec = SecretKeySpec(secretKey, "AES")
+    val ivSpec = IvParameterSpec(iv)
+    val cipher = Cipher.getInstance("AES/CBC/PKCS5Padding")
+    cipher.init(Cipher.ENCRYPT_MODE, keySpec, ivSpec)
+    return cipher.doFinal(dataToEncrypt)
+}
+
+fun generateRandomBytes(length: Int): ByteArray {
+    val random = SecureRandom()
+    val bytes = ByteArray(length)
+    random.nextBytes(bytes)
+    return bytes
+}
+
+fun generateGuid(): String {
+    return UUID.randomUUID().toString()
+}
+
+fun getAPIKey1Value(): String {
+    val currentDate = Date()
+    val futureDate = Date(currentDate.time + 30000) // 30 seconds into the future
+    val ticks = futureDate.time * 10000 + 621355968000000000L
+    val stringToEncrypt = "${generateGuid()}_$ticks"
+    HyperLog.i(TAG,"getAPIKey1Value:${encryptStringWithKey(stringToEncrypt, SECURITY_API_KEY_1)}")
+    return encryptStringWithKey(stringToEncrypt, SECURITY_API_KEY_1)
 }
