@@ -40,8 +40,8 @@ const val WRITE_TIMEOUT_SECONDS : Long = 40
 //Network Constants
 const val SECURITY_KEY_HEADER = "]{H?8hy}z5Q#ZL+(9mR+fsewed835*2dhHdfrhd!~sdgwe3453dghSEBSR";
 const val SECURITY_API_KEY_1 = "L2dNwK@7tYz!8F6b";
-const val SECURITY_API_KEY_1_NAME = "X-Ee-Correlation-id";
-const val SECURITY_API_KEY_2_NAME = "x-er-id";
+const val SECURITY_API_KEY_1_NAME = "X-Ee-Correlation-Id";
+const val SECURITY_API_KEY_2_NAME = "x-Er-Id";
 const val TAG = "EEUtils_BluePrint:"
 
 object DateTimeFormat {
@@ -289,7 +289,7 @@ fun generateSignature(pathname: String, queryString: String, body: String): Stri
     val secretKeySpec = SecretKeySpec(SECURITY_KEY_HEADER.toByteArray(StandardCharsets.UTF_8), "HmacSHA256")
     hmacSha256.init(secretKeySpec)
     val hash = hmacSha256.doFinal(dataToSign.toByteArray(StandardCharsets.UTF_8))
-    HyperLog.i(TAG,"generateSignature:${android.util.Base64.encodeToString(hash, android.util.Base64.NO_WRAP)}")
+    HyperLog.i(TAG,"X-Er-Id:${android.util.Base64.encodeToString(hash, android.util.Base64.NO_WRAP)}")
     return android.util.Base64.encodeToString(hash, android.util.Base64.NO_WRAP)
 }
 
@@ -330,6 +330,6 @@ fun getAPIKey1Value(): String {
     val futureDate = Date(currentDate.time + 30000) // 30 seconds into the future
     val ticks = futureDate.time * 10000 + 621355968000000000L
     val stringToEncrypt = "${generateGuid()}_$ticks"
-    HyperLog.i(TAG,"getAPIKey1Value:${encryptStringWithKey(stringToEncrypt, SECURITY_API_KEY_1)}")
+    HyperLog.i(TAG,"X-Ee-Correlation-Id:${encryptStringWithKey(stringToEncrypt, SECURITY_API_KEY_1)}")
     return encryptStringWithKey(stringToEncrypt, SECURITY_API_KEY_1)
 }
