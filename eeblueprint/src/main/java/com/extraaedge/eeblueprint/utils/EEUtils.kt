@@ -282,7 +282,7 @@ fun generateSignature(pathname: String, queryString: String, body: String): Stri
         finalQueryString = replacedQueryString.replace(",", "&")
     }
 
-    val dataToSign = "/$pathname$finalQueryString$body"
+    val dataToSign = "$pathname$finalQueryString$body"
     HyperLog.i(TAG,"Data to sign: $dataToSign")
 
     val hmacSha256 = Mac.getInstance("HmacSHA256")

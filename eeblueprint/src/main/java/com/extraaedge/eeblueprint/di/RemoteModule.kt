@@ -64,7 +64,7 @@ fun createRemoteModule(baseUrl: String, context: Context, isDebug: Boolean, isBe
             val endPoint = chain.call().request().url().url().file
             val requestBodyString: String? = originalRequest.body()?.let { bodyToString(it) }
             requestBuilder.addHeader(SECURITY_API_KEY_1_NAME, getAPIKey1Value())
-            requestBuilder.addHeader(SECURITY_API_KEY_2_NAME, generateSignature(endPoint,"",
+            requestBuilder.addHeader(SECURITY_API_KEY_2_NAME, generateSignature(endPoint.replace("?",""),"",
                 requestBodyString ?: ""))
 
             val request = requestBuilder.build()
