@@ -7,12 +7,13 @@ import com.extraaedge.eeblueprint.utils.*
 import com.extraaedge.eeblueprint.ui.CustomLogger
 import com.extraaedge.eeblueprint.utils.OKLOG_IMPORT
 import com.github.simonpercic.oklog3.OkLogInterceptor
-import com.google.gson.Gson
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
+import okhttp3.RequestBody
 import okhttp3.internal.Util
 import okhttp3.logging.HttpLoggingInterceptor
+import okio.Buffer
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -59,9 +60,11 @@ fun createRemoteModule(baseUrl: String, context: Context, isDebug: Boolean, isBe
                 }
                 requestBuilder.addHeader("Authorization", tokenString)
             }
+
+            val requestBodyString: String? = originalRequest.body()?.let { bodyToString(it) }
             requestBuilder.addHeader(SECURITY_API_KEY_1_NAME, getAPIKey1Value())
-            requestBuilder.addHeader(SECURITY_API_KEY_2_NAME, generateSignature(baseUrl,originalRequest.method(),
-                Gson().toJson(originalRequest.body())))
+            requestBuilder.addHeader(SECURITY_API_KEY_2_NAME, generateSignature(baseUrl,"",
+                requestBodyString ?: ""))
 
             val request = requestBuilder.build()
 
@@ -132,4 +135,10 @@ fun createRemoteModule(baseUrl: String, context: Context, isDebug: Boolean, isBe
             .build()
     }
 
+}
+
+private fun bodyToString(requestBody: RequestBody): String {
+    val buffer = Buffer()
+    requestBody.writeTo(buffer)
+    return buffer.readUtf8()
 }
