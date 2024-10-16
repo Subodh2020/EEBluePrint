@@ -40,7 +40,7 @@ android {
         targetSdkVersion 33
         versionCode 50
         versionName "1.0.4"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
@@ -61,7 +61,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-
     //AppCompat
     api "androidx.appcompat:appcompat:$appCompat"
 
@@ -72,7 +71,7 @@ dependencies {
     api "androidx.recyclerview:recyclerview:$recyclerView"
 
     //Anko
-    api "org.jetbrains.anko:anko:$anko"
+//    api "org.jetbrains.anko:anko:$anko"
 
     //Retrofit
     api "com.squareup.retrofit2:retrofit:$retrofit"
@@ -119,7 +118,10 @@ dependencies {
     //okLog
     implementation "com.github.simonpercic:oklog3:2.3.0"
     //HyperLog
-    implementation 'com.hypertrack:hyperlog:0.0.10'
+//    implementation 'com.hypertrack:hyperlog:0.0.10'
+
+    //multidesk
+    implementation "androidx.multidex:multidex:$multidex"
 }
 
 //if (project.rootProject.file('local.properties').exists()){

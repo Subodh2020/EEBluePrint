@@ -5,9 +5,7 @@ import com.extraaedge.eeblueprint.ui.BlueprintActivity
 
 class SampleActivity : BlueprintActivity() {
 
-
     override fun create() {
-
     }
 
     override fun layout(): Int = R.layout.activity_sample

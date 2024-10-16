@@ -4,11 +4,11 @@ import android.app.Activity
 import android.content.Context
 import android.graphics.Typeface
 import android.text.TextUtils
+import android.util.Log
 import com.extraaedge.eeblueprint.R
 import com.extraaedge.eeblueprint.remote.EEError
 import com.extraaedge.eeblueprint.utils.DateTimeFormat.TIME_ZONE_UTC
 import com.google.android.material.snackbar.Snackbar
-import com.hypertrack.hyperlog.HyperLog
 import de.mateware.snacky.Snacky
 import okhttp3.*
 import retrofit2.HttpException
@@ -283,14 +283,31 @@ fun generateSignature(pathname: String, queryString: String, body: String): Stri
     }
 
     val dataToSign = "$pathname$finalQueryString$body"
-    HyperLog.i(TAG,"Data to sign: $dataToSign")
+    Log.d(TAG,"Data to sign: $dataToSign")
 
     val hmacSha256 = Mac.getInstance("HmacSHA256")
     val secretKeySpec = SecretKeySpec(SECURITY_KEY_HEADER.toByteArray(StandardCharsets.UTF_8), "HmacSHA256")
     hmacSha256.init(secretKeySpec)
     val hash = hmacSha256.doFinal(dataToSign.toByteArray(StandardCharsets.UTF_8))
-    HyperLog.i(TAG,"X-Er-Id:${android.util.Base64.encodeToString(hash, android.util.Base64.NO_WRAP)}")
+    Log.d(TAG,"X-Er-Id:${android.util.Base64.encodeToString(hash, android.util.Base64.NO_WRAP)}")
     return android.util.Base64.encodeToString(hash, android.util.Base64.NO_WRAP)
+}
+
+fun generateSignatureFromUrlEncoded(pathname: String, body: String): String {
+    val dataToSign = pathname+body
+
+    Log.d(TAG, "Data to sign: $dataToSign")
+
+    // HMAC SHA256 encryption
+    val hmacSha256 = Mac.getInstance("HmacSHA256")
+    val secretKeySpec = SecretKeySpec(SECURITY_KEY_HEADER.toByteArray(StandardCharsets.UTF_8), "HmacSHA256")
+    hmacSha256.init(secretKeySpec)
+    val hash = hmacSha256.doFinal(dataToSign.toByteArray(StandardCharsets.UTF_8))
+
+    val signature = android.util.Base64.encodeToString(hash, android.util.Base64.NO_WRAP)
+    Log.d(TAG, "X-Er-Id: $signature")
+
+    return signature
 }
 
 fun encryptStringWithKey(stringToEncrypt: String, secretKey: String): String {
@@ -330,6 +347,6 @@ fun getAPIKey1Value(): String {
     val futureDate = Date(currentDate.time + 30000) // 30 seconds into the future
     val ticks = futureDate.time * 10000 + 621355968000000000L
     val stringToEncrypt = "${generateGuid()}_$ticks"
-    HyperLog.i(TAG,"X-Ee-Correlation-Id:${encryptStringWithKey(stringToEncrypt, SECURITY_API_KEY_1)}")
+    Log.d(TAG,"X-Ee-Correlation-Id:${encryptStringWithKey(stringToEncrypt, SECURITY_API_KEY_1)}")
     return encryptStringWithKey(stringToEncrypt, SECURITY_API_KEY_1)
 }
