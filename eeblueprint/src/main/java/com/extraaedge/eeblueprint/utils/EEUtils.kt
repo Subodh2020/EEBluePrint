@@ -9,16 +9,11 @@ import com.extraaedge.eeblueprint.R
 import com.extraaedge.eeblueprint.remote.EEError
 import com.extraaedge.eeblueprint.utils.DateTimeFormat.TIME_ZONE_UTC
 import com.google.android.material.snackbar.Snackbar
-import com.google.gson.Gson
-import com.google.gson.JsonSyntaxException
-import com.google.gson.reflect.TypeToken
-//import com.hypertrack.hyperlog.HyperLog
 import de.mateware.snacky.Snacky
 import okhttp3.*
 import retrofit2.HttpException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
-import java.net.URLDecoder
 import java.net.UnknownHostException
 import java.nio.charset.StandardCharsets
 import java.security.SecureRandom

@@ -1,17 +1,7 @@
 package com.extraaedge.eeblueprintsample
 
 import android.app.Activity
-import android.util.Log
-import com.extraaedge.eeblueprint.di.createRemoteModule
 import com.extraaedge.eeblueprint.ui.BlueprintActivity
-import com.extraaedge.eeblueprint.utils.getAPIKey1Value
-import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_sample.btnClick
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import okhttp3.Interceptor
-import org.koin.android.ext.android.inject
 
 class SampleActivity : BlueprintActivity() {
 
