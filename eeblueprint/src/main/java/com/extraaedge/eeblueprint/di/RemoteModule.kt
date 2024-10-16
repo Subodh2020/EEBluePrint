@@ -19,6 +19,8 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.net.SocketTimeoutException
+import java.net.URLDecoder
+import java.nio.charset.StandardCharsets
 import java.security.SecureRandom
 import java.security.cert.CertificateException
 import java.security.cert.X509Certificate
@@ -44,7 +46,6 @@ fun createRemoteModule(baseUrl: String, context: Context, isDebug: Boolean, isBe
         return@factory OkLogInterceptor.builder().shortenInfoUrl(true).setLogger(CustomLogger()).build()
     }
 
-
     factory(named(HEADERS_IMPORT)) {
         Interceptor { chain ->
             val originalRequest = chain.request()
@@ -64,8 +65,26 @@ fun createRemoteModule(baseUrl: String, context: Context, isDebug: Boolean, isBe
             val endPoint = chain.call().request().url().url().file
             val requestBodyString: String? = originalRequest.body()?.let { bodyToString(it) }
             requestBuilder.addHeader(SECURITY_API_KEY_1_NAME, getAPIKey1Value())
-            requestBuilder.addHeader(SECURITY_API_KEY_2_NAME, generateSignature(endPoint.replace("?",""),"",
-                requestBodyString ?: ""))
+
+            // Check if the request uses FormUrlEncoded
+            val contentType = originalRequest.body()?.contentType()?.toString()
+            val isFormUrlEncoded = contentType?.contains("application/x-www-form-urlencoded") == true
+
+            if(isFormUrlEncoded){
+                val decodedRequestBodyString = requestBodyString?.let {
+                    URLDecoder.decode(it, StandardCharsets.UTF_8.name())
+                }
+                val finalQueryString = decodedRequestBodyString?.split("&")
+                    ?.joinToString("") { entry ->
+                        val keyValue = entry.split("=")
+                        val key = keyValue[0]
+                        val value = keyValue.getOrNull(1) ?: ""
+                        if (value.isEmpty()) key else "$key:$value"
+                    } ?: ""
+                requestBuilder.addHeader(SECURITY_API_KEY_2_NAME, generateSignatureFromUrlEncoded(endPoint, finalQueryString))
+            }else{
+                requestBuilder.addHeader(SECURITY_API_KEY_2_NAME, generateSignature(endPoint.replace("?",""),"", requestBodyString ?: ""))
+            }
 
             val request = requestBuilder.build()
 

@@ -21,6 +21,7 @@ id txtLoading
 layout dialog_loading
 layout layout_default_toolbar
 raw animation_loading
+string an_error_occurred
 string app_name
 string dialog_action_cancel
 string dialog_action_no
@@ -30,6 +31,7 @@ string dialog_label_loading
 string dialog_title_confirmation
 string dialog_title_error
 string dialog_title_info
+string request_time_out
 style BlueprintAlertDialogTheme
 style BlueprintTheme
 style BlueprintTheme.Base
