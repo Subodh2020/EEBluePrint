@@ -70,9 +70,6 @@ dependencies {
     //UI
     api "androidx.recyclerview:recyclerview:$recyclerView"
 
-    //Anko
-//    api "org.jetbrains.anko:anko:$anko"
-
     //Retrofit
     api "com.squareup.retrofit2:retrofit:$retrofit"
     api "com.squareup.retrofit2:converter-gson:$gsonConverter"
@@ -117,8 +114,6 @@ dependencies {
     implementation "com.airbnb.android:lottie:3.7.0"
     //okLog
     implementation "com.github.simonpercic:oklog3:2.3.0"
-    //HyperLog
-//    implementation 'com.hypertrack:hyperlog:0.0.10'
 
     //multidesk
     implementation "androidx.multidex:multidex:$multidex"
