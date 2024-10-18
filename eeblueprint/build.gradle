@@ -70,8 +70,8 @@ dependencies {
     //UI
     api "androidx.recyclerview:recyclerview:$recyclerView"
 
-    //Anko
-//    api "org.jetbrains.anko:anko:$anko"
+    //Anko lib comment due to no use case found
+//    implementation 'org.jetbrains.anko:anko:0.10.6'
 
     //Retrofit
     api "com.squareup.retrofit2:retrofit:$retrofit"
