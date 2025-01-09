@@ -72,16 +72,15 @@ fun createRemoteModule(baseUrl: String, context: Context, isDebug: Boolean, isBe
             val isFormUrlEncoded = contentType?.contains("application/x-www-form-urlencoded") == true
 
             if(isFormUrlEncoded){
-                val decodedRequestBodyString = requestBodyString?.let {
-                    URLDecoder.decode(it, StandardCharsets.UTF_8.name())
-                }
-                val finalQueryString = decodedRequestBodyString?.split("&")
+                val finalQueryString = requestBodyString?.split("&")
                     ?.joinToString("") { entry ->
                         val keyValue = entry.split("=")
                         val key = keyValue[0]
                         val value = keyValue.getOrNull(1) ?: ""
-                        val encodedValue = URLEncoder.encode(value, StandardCharsets.UTF_8.name()).replace("%26", "&")
-                        if (encodedValue.isEmpty()) key else "$key:$encodedValue"
+                        val decodedVal = value.let {
+                            URLDecoder.decode(it, StandardCharsets.UTF_8.name())
+                        }
+                        if (decodedVal.isEmpty()) key else "$key:$decodedVal"
                     } ?: ""
                 requestBuilder.addHeader(SECURITY_API_KEY_2_NAME, generateSignatureFromUrlEncoded(endPoint, finalQueryString))
             }else{
