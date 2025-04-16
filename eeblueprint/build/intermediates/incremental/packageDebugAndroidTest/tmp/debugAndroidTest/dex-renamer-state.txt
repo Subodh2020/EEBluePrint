@@ -1,0 +1,10 @@
+#Wed Apr 16 16:53:22 IST 2025
+path.2=classes3.dex
+path.1=classes2.dex
+path.0=classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+base.2=E\:\\Workspace-Android\\AndroidProgramm\\EEBluePrint\\eeblueprint\\build\\intermediates\\dex\\debugAndroidTest\\mergeDexDebugAndroidTest\\classes3.dex
+base.1=E\:\\Workspace-Android\\AndroidProgramm\\EEBluePrint\\eeblueprint\\build\\intermediates\\dex\\debugAndroidTest\\mergeDexDebugAndroidTest\\classes2.dex
+base.0=E\:\\Workspace-Android\\AndroidProgramm\\EEBluePrint\\eeblueprint\\build\\intermediates\\dex\\debugAndroidTest\\mergeDexDebugAndroidTest\\classes.dex
