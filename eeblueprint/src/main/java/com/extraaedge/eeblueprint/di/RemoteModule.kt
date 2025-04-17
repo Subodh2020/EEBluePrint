@@ -71,18 +71,18 @@ fun createRemoteModule(baseUrl: String, context: Context, isDebug: Boolean, isBe
             val contentType = originalRequest.body()?.contentType()?.toString()
             val isFormUrlEncoded = contentType?.contains("application/x-www-form-urlencoded") == true
 
-            if(isFormUrlEncoded){
-//                val finalQueryString = requestBodyString?.split("&")
-//                    ?.joinToString("") { entry ->
-//                        val keyValue = entry.split("=")
-//                        val key = keyValue[0]
-//                        val value = keyValue.getOrNull(1) ?: ""
-//                        val decodedVal = value.let {
-//                            URLDecoder.decode(it, StandardCharsets.UTF_8.name())
-//                        }
-//                        if (decodedVal.isEmpty()) key else "$key:$decodedVal"
-//                    } ?: ""
-                requestBuilder.addHeader(SECURITY_API_KEY_2_NAME, generateSignatureFromUrlEncoded(endPoint, ""))
+            if(isFormUrlEncoded && !endPoint.contains("email/sendSingleEmail")){
+                val finalQueryString = requestBodyString?.split("&")
+                    ?.joinToString("") { entry ->
+                        val keyValue = entry.split("=")
+                        val key = keyValue[0]
+                        val value = keyValue.getOrNull(1) ?: ""
+                        val decodedVal = value.let {
+                            URLDecoder.decode(it, StandardCharsets.UTF_8.name())
+                        }
+                        if (decodedVal.isEmpty()) key else "$key:$decodedVal"
+                    } ?: ""
+                requestBuilder.addHeader(SECURITY_API_KEY_2_NAME, generateSignatureFromUrlEncoded(endPoint, finalQueryString))
             }else{
                 requestBuilder.addHeader(SECURITY_API_KEY_2_NAME, generateSignature(endPoint.replace("?",""),"", requestBodyString ?: ""))
             }
