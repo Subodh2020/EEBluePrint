@@ -19,20 +19,22 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
     private val supervisorJob = SupervisorJob()
 
     suspend fun build(): NetworkBoundResource<ResultType, RequestType> {
-        withContext(Dispatchers.Main) { result.value =
-            Resource.loading(null)
+        withContext(Dispatchers.Main) {
+            result.value = Resource.loading(null)
         }
-        CoroutineScope(coroutineContext).launch(supervisorJob) {
+
+        CoroutineScope(Dispatchers.IO + supervisorJob).launch {
             val dbResult = loadFromDb()
+
             if (shouldFetch(dbResult)) {
                 try {
                     fetchFromNetwork(dbResult)
                 } catch (e: Exception) {
                     Log.e("NetworkBoundResource", "An error happened: $e")
-                    if (e.message != null && e.message!!.contains(NETWORK_CODE_401.toString())){
+                    if (e.message?.contains(NETWORK_CODE_401.toString()) == true) {
                         refreshToken()
-                    }else{
-                        setValue(Resource.error(e.getEEError(), loadFromDb()))
+                    } else {
+                        setValue(Resource.error(e.getEEError(), dbResult))
                     }
                 }
             } else {
@@ -40,6 +42,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
                 setValue(Resource.success(dbResult))
             }
         }
+
         return this
     }
 

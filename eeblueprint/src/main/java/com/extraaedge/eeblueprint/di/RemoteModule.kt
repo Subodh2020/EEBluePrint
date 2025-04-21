@@ -73,6 +73,8 @@ fun createRemoteModule(baseUrl: String, context: Context, isDebug: Boolean, isBe
 
             if(isFormUrlEncoded){
                 val finalQueryString = if(endPoint.contains("email/sendSingleEmail")){
+                    ""
+                }else{
                     requestBodyString?.split("&")
                         ?.joinToString("") { entry ->
                             val keyValue = entry.split("=")
@@ -83,8 +85,6 @@ fun createRemoteModule(baseUrl: String, context: Context, isDebug: Boolean, isBe
                             }
                             if (decodedVal.isEmpty()) key else "$key:$decodedVal"
                         } ?: ""
-                }else{
-                    ""
                 }
                 requestBuilder.addHeader(SECURITY_API_KEY_2_NAME, generateSignatureFromUrlEncoded(endPoint, finalQueryString))
             }else{
